@@ -1,0 +1,11 @@
+server:
+  port: 8082
+security:
+  oauth2:
+    client:
+      client_id: client
+      client-secret: 123456
+      access-token-uri: http://localhost:8081/sso/oauth/token
+      user-authorization-uri: http://localhost:8081/sso/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:8081/sso/oauth/check_token
