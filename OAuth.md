@@ -1,8 +1,11 @@
+# OAuth2.0学习与演示报告
+by 黎志源
 ## OAuth2.0是什么？
 > OAuth 2.0 is the industry-standard protocol for authorization. 
 > OAuth 2.0 focuses on client developer simplicity while providing specific authorization flows for web applications,
 > desktop applications, mobile phones, and living room devices.
-> <p align="right">-- oauth.net</p>   
+>  -- oauth.net
+
 OAuth 2.0是一个认证的工业级标准。OAuth2.0为web应用、桌面应用、移动手机和居家设备提供特定的认证流，致力于为客户端开发者提供便利。  
 简单来说，OAuth2.0是一个广泛用于第三方认证的标准，而不是一个特定的接口或工具。
 ## OAuth2.0授权模式
@@ -23,7 +26,7 @@ OAuth框架为不同不同的使用环境指定了几种授权模式，同时也
 3. 客户端拿到token令牌后，携带token向资源服务器请求资源。  
 4. 资源服务器验证token令牌后，返回请求的资源。
 
-![1ad5ad6eddc451da07eabf7fabf8fd60d0163215.webp](..%2F..%2FAppData%2FLocal%2FTemp%2F1ad5ad6eddc451da07eabf7fabf8fd60d0163215.webp)
+![client.png](client.png)
 ### Passoword Grant
 密码授权模式具有很大的风险，需要第三方服务直接获取用户名密码等隐私信息，故不建议使用。  
 密码授权模式认证步骤如下：  
@@ -33,7 +36,7 @@ OAuth框架为不同不同的使用环境指定了几种授权模式，同时也
 4. 第三方服务拿到token令牌后，携带token向资源服务器请求资源。
 5. 资源服务器验证token令牌后，返回请求的资源。  
 
-![f2deb48f8c5494ee59b225e130f04ff898257e45.webp](..%2F..%2FAppData%2FLocal%2FTemp%2Ff2deb48f8c5494ee59b225e130f04ff898257e45.webp)  
+![password.png](password.png)  
 ### Implicit Flow
 隐式授权是授权码模式的简化版，省略了授权码，直接将token暴露给用户，存在token泄露风险，故不建议使用。  
 隐式授权认证步骤如下：  
@@ -41,7 +44,7 @@ OAuth框架为不同不同的使用环境指定了几种授权模式，同时也
 2. 用户在认证服务器进行登录授权操作，认证服务器返回token令牌给用户。
 3. 第三方服务读取到token令牌后，携带token向资源服务器请求资源。
 4. 资源服务器验证token令牌后，返回请求的资源。
-![f31fbe096b63f62447d0427c994144fe1b4ca3cf.webp](..%2F..%2FAppData%2FLocal%2FTemp%2Ff31fbe096b63f62447d0427c994144fe1b4ca3cf.webp)  
+![implicit.png](implicit.png)  
 ### Authorization Code
 授权码模式是最常用的授权模式。授权码模式既可以防止用户直接接触token,又防止了第三方服务获取用户密码等隐私信息，大大增加了授权的安全性。  
 授权码模式认证步骤如下：
@@ -52,7 +55,7 @@ OAuth框架为不同不同的使用环境指定了几种授权模式，同时也
 5. 第三方服务拿到token令牌后，携带token向资源服务器请求资源。  
 6. 资源服务器验证token令牌后，返回请求的资源。
 
-![e4dde71190ef76c6fef3aa6f821352fcaf516758.webp](..%2F..%2FAppData%2FLocal%2FTemp%2Fe4dde71190ef76c6fef3aa6f821352fcaf516758.webp)  
+![code.png](code.png)  
 ## OAuth2.0实现
 根据给定的教程，我使用spring-cloud-starter-oauth2包中对于OAuth2.0标准的实现。  
 部分操作使用Postman模拟。  
@@ -108,6 +111,11 @@ refresh token用于在令牌过期时刷新令牌。
 ## 项目源码
 github仓库 
 https://github.com/yuanqwq/OAuthTest/
+## 参考资料
+https://oauth.net/2/  
+https://www.oauth.com/  
+https://baijiahao.baidu.com/s?id=1667229742332338665  
+...
 
 
 
